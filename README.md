@@ -4,6 +4,7 @@
 
 Demostrar cómo un atacante puede desbordar la tabla CAM (*Content Addressable Memory*) de un switch Cisco inyectando masivamente frames con MACs origen aleatorias, forzando al switch a comportarse como un hub y retransmitir el tráfico unicast por todos los puertos, permitiendo la captura de tráfico ajeno.
 
+Link a la lista de reproducción: https://www.youtube.com/playlist?list=PL1bMSHFyMPr7W7DrFd-INmRRQDjGquFIV
 ---
 
 ## 📋 Objetivo del Script
@@ -112,17 +113,6 @@ sudo tcpdump -i ens4.10 -n not arp
 | Aging time por defecto | 300 segundos |
 | Entradas para desbordar | ~8.000 MACs únicas |
 | Tiempo del ataque | ~4 segundos a 2000 pkt/s |
-
----
-
-## 📸 Capturas de Pantalla
-
-> Insertar capturas en esta sección:
-
-1. **`img/01_cam_antes.png`** — `show mac-address-table count` en SW-1 antes del ataque. Pocas entradas dinámicas.
-2. **`img/02_script_corriendo.png`** — Terminal Kali con el script mostrando el contador de frames y tasa (pkt/s).
-3. **`img/03_cam_saturada.png`** — `show mac-address-table count` durante el ataque. Entradas dinámicas en máximo.
-4. **`img/04_tcpdump_captura.png`** — `tcpdump` en Kali capturando tráfico unicast ajeno (entre VPCs).
 
 ---
 
